@@ -20,7 +20,6 @@ const corsOptions = {
     }
   },
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true, // Allow cookies if needed
 };
 
 // Apply CORS middleware with the options
