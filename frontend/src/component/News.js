@@ -57,11 +57,9 @@ const News = (props) => {
   }, [props.category]);
 
   const fetchMoreData = async () => {
-    // const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apikey}&page=${
-    //   page + 1
-    // }&pageSize=${props.pageSize}`;
-
-    const url = "https://newsapi.org/v2/everything?q=tesla&from=2024-12-01&sortBy=publishedAt&apiKey=504bae6a23d845d4b6005c1894a08ffc"
+    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apikey}&page=${
+      page + 1
+    }&pageSize=${props.pageSize}`;
     setPage(page + 1);
     const response = await fetch(url);
     const data = await response.json();
