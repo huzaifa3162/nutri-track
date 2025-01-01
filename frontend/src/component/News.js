@@ -16,16 +16,42 @@ const News = (props) => {
     return String(val).charAt(0).toUpperCase() + String(val).slice(1);
   };
 
-  const fetchNews = async () => {
-    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apikey}&page=${page}&pageSize=${props.pageSize}`;
-    setLoading(true);
-    const response = await fetch(url);
-    const data = await response.json();
-    setArticles(data.articles);
-    setTotalResults(data.totalResults);
-    setLoading(false);
-  };
+  // const fetchNews = async () => {
+  //   const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apikey}&page=${page}&pageSize=${props.pageSize}`;
+  //   setLoading(true);
+  //   const response = await fetch(url);
+  //   const data = await response.json();
+  //   setArticles(data.articles);
+  //   setTotalResults(data.totalResults);
+  //   setLoading(false);
+  // };
 
+  const fetchNews = async () => {
+    try {
+      const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apikey}&page=${page}&pageSize=${props.pageSize}`;
+      setLoading(true);
+      const response = await fetch(url);
+  
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+  
+      const data = await response.json();
+      if (data.articles) {
+        setArticles(data.articles);
+        setTotalResults(data.totalResults);
+      } else {
+        setArticles([]);
+        setTotalResults(0);
+      }
+    } catch (error) {
+      console.error("Error fetching news:", error);
+      setArticles([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+  
   React.useEffect(() => {
     fetchNews();
   }, [props.category]);
@@ -48,12 +74,19 @@ const News = (props) => {
           NewsMonkey - Top {capitalizeFirstLetter(props.category)} Headlines
         </h1>
         {loading && <Spinner />}
-        <InfiniteScroll
+        {/* <InfiniteScroll
           dataLength={articles.length}
           next={fetchMoreData}
           hasMore={articles.length < totalResults}
           loader={<Spinner />}
-        >
+        > */}
+         <InfiniteScroll
+  dataLength={articles ? articles.length : 0}
+  next={fetchMoreData}
+  hasMore={articles && articles.length < totalResults}
+  loader={<Spinner />}
+>
+
           <div className="row">
             {articles.map((article, index) => (
               <div className="col-md-4 my-3" key={index}>
