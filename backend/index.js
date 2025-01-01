@@ -8,7 +8,17 @@ const port = 5000;
 
 // Configure CORS options
 const corsOptions = {
-  origin: ["http://localhost:3000", "https://nutri-track-orcin.vercel.app"],
+  origin: (origin, callback) => {
+    const allowedOrigins = [
+      "http://localhost:3000",
+      "https://nutri-track-orcin.vercel.app"
+    ];
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true); // Allow the request
+    } else {
+      callback(new Error("Not allowed by CORS")); // Block the request
+    }
+  },
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true, // Allow cookies if needed
 };
