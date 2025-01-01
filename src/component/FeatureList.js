@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ficon from "../images/features-first-icon.png";
-import Nutri from "../images/nutri.png";
 import hn from "../images/hn.png";
 import DP from "../images/DP.png";
 import Notes from "../images/Notes.png";

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Range from './Range';
 import Output from './Output';
 import '../styles/bmi.css';
 import Header from './Header';
