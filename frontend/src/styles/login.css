@@ -1,0 +1,154 @@
+/* General Container Styling */
+.login-container {
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #ed563b, #f9735b);
+  font-family: "Poppins", sans-serif;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Login Box Styling */
+.login-box {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  transform: scale(0.95);
+  transition: transform 0.3s ease-in-out;
+}
+
+.login-box:hover {
+  transform: scale(1);
+}
+
+/* Title and Subtitle */
+.login-title {
+  font-size: 28px;
+  color: #232d39;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.login-title em {
+  color: #ed563b;
+  font-style: normal;
+}
+
+.login-subtitle {
+  font-size: 16px;
+  color: #7a7a7a;
+  margin: 10px 0 30px;
+}
+
+/* Form Styling */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 14px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #ed563b;
+  box-shadow: 0 0 6px rgba(237, 86, 59, 0.4);
+}
+
+/* Button Styling */
+.login-btn {
+  background-color: #ed563b;
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background-color: #f9735b;
+  transform: translateY(-2px);
+}
+
+.login-btn:disabled {
+  background-color: #b0c4de;
+  cursor: not-allowed;
+}
+
+/* Error Message */
+.error-message {
+  color: #dc3545;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Sign Up Text */
+.signup-text {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #495057;
+}
+
+.signup-link {
+  color: #ed563b;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .login-box {
+    padding: 30px 20px;
+  }
+
+  .login-title {
+    font-size: 24px;
+  }
+
+  .login-subtitle {
+    font-size: 14px;
+  }
+
+  .form-control {
+    font-size: 14px;
+  }
+
+  .login-btn {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,130 @@
+.diet-plans-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+    margin: 130px auto 20px auto;
+    text-align: center;
+}
+
+.diet-plans-title {
+    font-size: 2.5rem;
+    color: #ecf0f1; 
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.diet-plans-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.diet-card {
+    background: #fff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 320px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.diet-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.diet-card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.diet-card-title {
+    font-size: 1.75rem;
+    color: #11181f; 
+    font-weight: 600;
+    margin: 1rem 0;
+}
+
+.diet-card-description {
+    font-size: 1rem;
+    color: #484a4b; 
+    line-height: 1.5;
+    padding: 0 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.weight-gain-card {
+    border: 2px solid #4caf50;
+}
+
+.weight-loss-card {
+    border: 2px solid #f44336;
+}
+
+.keto-diet-card {
+    border: 2px solid #ffa500;
+}
+
+@media (max-width: 1024px) {
+    .diet-plans-grid {
+        gap: 1.5rem;
+    }
+
+    .diet-card {
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .diet-plans-title {
+        font-size: 2rem;
+    }
+
+    .diet-card-title {
+        font-size: 1.4rem;
+    }
+
+    .diet-card-description {
+        font-size: 1rem;
+    }
+
+    .diet-card {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .diet-plans-title {
+        font-size: 1.8rem;
+    }
+
+    .diet-card-title {
+        font-size: 1.25rem;
+    }
+
+    .diet-card-description {
+        font-size: 0.9rem;
+    }
+
+    .diet-card {
+        max-width: 95%;
+    }
+
+    .diet-plans-grid {
+        gap: 1rem;
+    }
+}
