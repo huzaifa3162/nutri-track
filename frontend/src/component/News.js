@@ -30,12 +30,13 @@ const News = (props) => {
     try {
       const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apikey}&page=${page}&pageSize=${props.pageSize}`;
       setLoading(true);
-      const response = await fetch(url);
   
+      const response = await fetch(url);
       if (response.status === 426) {
-        console.error("Upgrade Required: Please check your API plan or hosting settings.");
+        console.error("426 Upgrade Required: Check API key or subscription.");
         return;
       }
+  
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
