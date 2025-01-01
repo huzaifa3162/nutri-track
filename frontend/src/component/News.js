@@ -32,18 +32,17 @@ const News = (props) => {
       setLoading(true);
       const response = await fetch(url);
   
+      if (response.status === 426) {
+        console.error("Upgrade Required: Please check your API plan or hosting settings.");
+        return;
+      }
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
   
       const data = await response.json();
-      if (data.articles) {
-        setArticles(data.articles);
-        setTotalResults(data.totalResults);
-      } else {
-        setArticles([]);
-        setTotalResults(0);
-      }
+      setArticles(data.articles || []);
+      setTotalResults(data.totalResults || 0);
     } catch (error) {
       console.error("Error fetching news:", error);
       setArticles([]);
@@ -87,8 +86,9 @@ const News = (props) => {
   loader={<Spinner />}
 >
 
+
           <div className="row">
-            {articles.map((article, index) => (
+            {/* {articles.map((article, index) => (
               <div className="col-md-4 my-3" key={index}>
                 <NewsItem
                   title={article.title ? article.title.slice(0, 40) : " "}
@@ -104,7 +104,27 @@ const News = (props) => {
                   source={article.source.name}
                 />
               </div>
-            ))}
+            ))} */}
+
+
+{articles?.map((article, index) => (
+  <div className="col-md-4 my-3" key={index}>
+    <NewsItem
+      title={article.title ? article.title.slice(0, 40) : " "}
+      decsription={
+        article.description
+          ? article.description.slice(0, 60)
+          : "Click Here To Read More"
+      }
+      imageUrl={article.urlToImage}
+      newsUrl={article.url}
+      author={article.author}
+      date={article.publishedAt}
+      source={article.source.name}
+    />
+  </div>
+))}
+
           </div>
         </InfiniteScroll>
       </div>
