@@ -1,0 +1,176 @@
+.weight-gain-container {
+    font-family: "Arial", sans-serif;
+    margin: 130px auto 20px auto;
+    max-width: 1000px;
+    padding-top: 100px;
+    padding: 40px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.weight-gain-title {
+    text-align: center;
+    color: #333;
+    font-size: 2.75rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.weight-gain-input-section {
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weight-gain-label {
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.weight-gain-input {
+    padding: 12px;
+    margin: 12px 0;
+    width: 280px;
+    max-width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.weight-gain-input:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.4);
+    outline: none;
+}
+
+.weight-gain-button {
+    padding: 14px 28px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    max-width: 300px;
+}
+
+.weight-gain-button:hover,
+.weight-gain-button:focus {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+.weight-gain-results-section {
+    margin-top: 30px;
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+    max-width: 100%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.weight-gain-subtitle {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.weight-gain-meal-section {
+    margin-bottom: 25px;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.weight-gain-meal-section:last-child {
+    border-bottom: none;
+}
+
+.weight-gain-meal-title {
+    color: #333;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+.weight-gain-meal-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.weight-gain-meal-item {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.7;
+    display: flex;
+    align-items: center;
+}
+
+.weight-gain-meal-item::before {
+    content: "\2022";
+    color: #28a745;
+    font-weight: bold;
+    display: inline-block;
+    width: 1.2em;
+    margin-right: 15px;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .weight-gain-container {
+        max-width: 85%;
+        padding: 25px;
+    }
+
+    .weight-gain-subtitle {
+        font-size: 1.6rem;
+    }
+
+    .weight-gain-meal-title {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .weight-gain-container {
+        max-width: 95%;
+        padding: 18px;
+    }
+
+    .weight-gain-title {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .weight-gain-container {
+        padding: 15px;
+    }
+
+    .weight-gain-title {
+        font-size: 1.9rem;
+    }
+
+    .weight-gain-subtitle {
+        font-size: 1.4rem;
+    }
+
+    .weight-gain-meal-title {
+        font-size: 1.2rem;
+    }
+}

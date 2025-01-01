@@ -1,0 +1,115 @@
+.keto-diet-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+    margin: 130px auto 20px auto;
+    max-width: 1000px;
+    padding: 40px;
+    border-radius: 15px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.keto-diet-title {
+    font-size: 2.5rem;
+    color: #ecf0f1;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.keto-diet-input-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.keto-diet-label {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #ecf0f1;
+}
+
+.keto-diet-input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+    width: 200px;
+    text-align: center;
+}
+
+.keto-diet-button {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #2980b9;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.keto-diet-button:hover {
+    background-color: #3498db;
+}
+
+.keto-diet-results-section {
+    margin-top: 2rem;
+    background: rgba(44, 62, 80, 0.9);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.keto-diet-subtitle {
+    font-size: 1.8rem;
+    color: #ecf0f1;
+    margin-bottom: 1rem;
+}
+
+.keto-diet-meal-section {
+    margin-top: 1.5rem;
+}
+
+.keto-diet-meal-title {
+    font-size: 1.5rem;
+    color: #ecf0f1;
+    margin-bottom: 1rem;
+}
+
+.keto-diet-meal-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.keto-diet-meal-item {
+    font-size: 1rem;
+    color: #bdc3c7;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .keto-diet-title {
+        font-size: 2rem;
+    }
+
+    .keto-diet-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .keto-diet-meal-title {
+        font-size: 1.25rem;
+    }
+
+    .keto-diet-input {
+        width: 90%;
+    }
+}
