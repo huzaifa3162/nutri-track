@@ -71,7 +71,7 @@ const News = (props) => {
       <Header />
       <div className="news-section-container">
         <h1 className="news-section-title">
-          NewsMonkey - Top {capitalizeFirstLetter(props.category)} Headlines
+          HealthNews - Top {capitalizeFirstLetter(props.category)} Headlines
         </h1>
         {loading && <Spinner />}
         {/* <InfiniteScroll
